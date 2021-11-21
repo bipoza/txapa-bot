@@ -1,8 +1,7 @@
 prod_constants.py
 .venv
 venv/
-
-
+audio/
 
 
 # Byte-compiled / optimized / DLL files
