@@ -16,3 +16,9 @@ def slugify(text):
     # Strip leading, trailing and multiple whitespace, convert remaining whitespace to _
     text = u'_'.join(text.split())
     return text
+
+
+def download_from_url(url, path):
+    import urllib.request
+    urllib.request.urlretrieve(url, path)
+    return path
