@@ -51,3 +51,4 @@ Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
 ## Erabilitako python liburutegiak
 * python-telegram-bot
 * pydub
+* feedparser
