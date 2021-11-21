@@ -9,7 +9,7 @@ from utils import create_folder, download_from_url, get_file_extension, save_ite
 
 
 
-def notify_telegram(audio, filename, thumb, caption, performer):
+def notify_telegram(title, audio, filename, thumb, caption, performer):
 
     # podcast_data = {
     #     "audio":"./audio/xarmatiropunk-2021-11-16_compressed.mp3",
@@ -24,7 +24,8 @@ def notify_telegram(audio, filename, thumb, caption, performer):
     # bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
     bot.send_audio(chat_id=TELEGRAM_CHAT_ID, 
         audio=open(audio, 'rb'), 
-        thumb=open(thumb, 'rb'), 
+        thumb=open(thumb, 'rb'),
+        title=title,
         caption=caption,
         filename=filename,
         performer=performer)
@@ -59,7 +60,8 @@ if __name__ == '__main__':
                     audio=compressed_file_url,
                     filename=item['slug'],
                     thumb=thumb_file_url,
-                    caption=item['title'],
+                    caption=item['caption'],
+                    title=item['title'],
                     performer=item['author'],
                 )
                 # import pdb; pdb.set_trace()

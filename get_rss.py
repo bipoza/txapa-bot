@@ -24,6 +24,19 @@ def get_thumb_url(item):
         return img['src']
     return None
 
+# def get_caption(item):
+#     subtitle_detail = item.get("subtitle_detail", None)
+#     if subtitle_detail:
+#         return subtitle_detail['value']
+#     return None
+
+def get_caption(item):
+    soup = BeautifulSoup(item.summary, features="html.parser")
+    caption = soup.find('p')
+    if caption:
+        return caption.text
+    return None
+
 def get_rss_items_in_json():
     feed = feedparser.parse(TXAPA_IRRATIA_RSS_URL)
     rss_items = feed.entries
@@ -39,7 +52,9 @@ def get_rss_items_in_json():
             "slug":slugify(item.title),
             "date": item.get("published", None),
             "duration": item.get("itunes_duration", None),
+            "caption": get_caption(item),
         }
+        # import pdb; pdb.set_trace()
         json_items.append(podcast_data)
 
     return json_items
@@ -66,4 +81,5 @@ def get_news_items():
     # save_rss_items_in_json_to_file(rss_items)
 
 # if __name__ == "__main__":
-#     get_news_items()
+# #     get_news_items()
+#     get_rss_items_in_json()
