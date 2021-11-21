@@ -1,15 +1,12 @@
 import telegram
 from constants import TELEGRAM_BOT_API_KEY, TELEGRAM_CHAT_ID
 from audio_compressor import compress_audio_url
-from get_rss import get_news_items, get_rss_items_in_json_from_file, save_rss_items_in_json_to_file
-from utils import download_from_url
+from get_rss import get_news_items
+from utils import create_folder, download_from_url, get_file_extension, save_item_to_file, remove_folder, create_folder
 
 
 
-def save_item_to_file(item):
-    json_db = get_rss_items_in_json_from_file()
-    json_db.append(item)
-    save_rss_items_in_json_to_file(json_db)
+
 
 def notify_telegram(audio, filename, thumb, caption, performer):
 
@@ -35,20 +32,24 @@ def notify_telegram(audio, filename, thumb, caption, performer):
 
 
 if __name__ == '__main__':
+    # RSS eta Datu basearen arteko elementu berriak ekarri
     news_items = get_news_items()
     
     if len(news_items) > 0:
-        # message = "New podcast available: " + news_items[0]["title"]
-        # print(message)
         for item in news_items:
-            print("Irratsaio berria: " + item["title"])
-            audio_file_url = download_from_url(item['audio_url'], './audio/'+item['slug']+'.mp3')
-            print("Audio irratsaioa deskargatua: " + audio_file_url)
-            thumb_file_url = download_from_url(item['thumb_url'], './audio/thumb.jpeg')
-            print("Irratsaioaren irudia deskargatua: " + thumb_file_url)
+            print("Irratsaio berria: " + item["title"] +"\n")
+            folder_path = "./audio/{}".format(item["id"])
+            create_folder(folder_path)
+
+            thumb_file_url = download_from_url(item['thumb_url'], '{}/{}_thumb{}'.format(folder_path, item['slug'], get_file_extension(item['thumb_url'])))
+            print("Irudia deskargatua: " + thumb_file_url+"\n")
+
+            audio_file_url = download_from_url(item['audio_url'], '{}/{}{}'.format(folder_path, item['slug'], get_file_extension(item['audio_url'])))
+            print("Audio deskargatuta: " + audio_file_url +"\n")
+
             if audio_file_url:
                 print("Audioa konprimatzen...")
-                compressed_file_url = compress_audio_url(audio_file_url, './audio/compressed/'+item['slug']+'.mp3')
+                compressed_file_url = compress_audio_url(audio_file_url, '{}/{}_compressed{}'.format(folder_path, item['slug'], get_file_extension(item['audio_url'])))
                 print("Audioa konprimatu da: " + compressed_file_url)
             
                 notify_telegram(
@@ -58,8 +59,10 @@ if __name__ == '__main__':
                     caption=item['title'],
                     performer=item['author'],
                 )
+                # import pdb; pdb.set_trace()
                 save_item_to_file(item)
-                print("Irratsaioa gorde da")
-            # import pdb; pdb.set_trace()
+                remove_folder(folder_path)
+    else:
+        print("Ez dago irratsaio berririk")
             # compress_audio_url("./audio/xarmatiropunk-2021-11-16.mp3", "./audio/compressed/xarmatiropunk-2021-11-16.mp3")
     # notify_telegram('Kaixo mundua')

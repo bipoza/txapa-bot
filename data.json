@@ -1,96 +1,66 @@
 [
     {
-        "id": "http://www.txapairratia.org/?p=27678",
-        "title": "Xarma Tiro Punk #032 Lo que importa es la pasión que pongas en la jugada.",
-        "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/xarmatiropunk-2021-11-16.mp3",
-        "author": "Xarma tiro punk",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/WhatsApp-Image-2021-11-15-at-23.28.00-1024x739.jpeg",
-        "slug": "Xarma_Tiro_Punk_032_Lo_que_importa_es_la_pasión_que_pongas_en_la_jugada",
-        "date": "Wed, 17 Nov 2021 13:50:23 +0000",
-        "duration": "1:00:01"
-    },
-    {
-        "id": "http://www.txapairratia.org/?p=27673",
-        "title": "KOLAX hizkuntza, ez donk amaitu, guifinet, magia",
-        "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/kolax20211116.mp3",
-        "author": "Kolax",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/0026364120_10-1024x724.jpg",
-        "slug": "KOLAX_hizkuntza_ez_donk_amaitu_guifinet_magia",
-        "date": "Tue, 16 Nov 2021 22:17:19 +0000",
-        "duration": "1:03:59"
-    },
-    {
-        "id": "http://www.txapairratia.org/?p=27665",
-        "title": "HAUS OF BEATS 279",
-        "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/hausofbeats20211115.mp3",
-        "author": "Haus of Beats",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/279-1024x1024.jpg",
-        "slug": "HAUS_OF_BEATS_279",
-        "date": "Mon, 15 Nov 2021 20:01:37 +0000",
-        "duration": "59:49"
-    },
-    {
-        "id": "http://www.txapairratia.org/?p=27659",
+        "id": "27659",
         "title": "Guraso.eus 4. podkasta",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/4.-podkasta.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/4.-podkasta.jpg",
         "author": "Gurasoak",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/4.-podkasta.jpg",
         "slug": "Gurasoeus_4_podkasta",
         "date": "Fri, 12 Nov 2021 06:16:47 +0000",
         "duration": null
     },
     {
-        "id": "http://www.txapairratia.org/?p=27656",
+        "id": "27656",
         "title": "NOLA ALDATZEN DIREN GAUZAK #214 Arrosa Irrati Sarea, 20 urte uhinak uzt(h)artuz",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/nolaaldatzen-2021-11-10.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/topaketak2021-arazoak6.gif",
         "author": "Nola aldatzen diren gauzak",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/topaketak2021-arazoak6.gif",
         "slug": "NOLA_ALDATZEN_DIREN_GAUZAK_214_Arrosa_Irrati_Sarea_20_urte_uhinak_uzt(h)artuz",
         "date": "Thu, 11 Nov 2021 07:58:42 +0000",
         "duration": "1:00:39"
     },
     {
-        "id": "http://www.txapairratia.org/?p=27652",
+        "id": "27652",
         "title": "ZIEGARIK GABEKO HERENSUGEAK #38",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/ziegarik-2021-11-07.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/01/logo_con_firma.png",
         "author": "Ziegarik gabeko herensugea",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/01/logo_con_firma.png",
         "slug": "ZIEGARIK_GABEKO_HERENSUGEAK_38",
         "date": "Wed, 10 Nov 2021 21:27:51 +0000",
         "duration": "1:04:41"
     },
     {
-        "id": "http://www.txapairratia.org/?p=27645",
+        "id": "27645",
         "title": "KZko hotsak: Louise Michel, Erbesteko gutunak Hugori Liburu aurkezpena",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/Kz-hotsak-Louise-Michel-Erbesteko-gutunak-Victor-Hugori.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/erbesteko-gutunak-victor-hugori-txalaparta-eus-745x1024.jpg",
         "author": "Ekintzak irratitik",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/erbesteko-gutunak-victor-hugori-txalaparta-eus-745x1024.jpg",
         "slug": "KZko_hotsak_Louise_Michel_Erbesteko_gutunak_Hugori_Liburu_aurkezpena",
         "date": "Wed, 10 Nov 2021 18:43:29 +0000",
         "duration": "1:13:35"
     },
     {
-        "id": "http://www.txapairratia.org/?p=27636",
+        "id": "27636",
         "title": "Xarma tiro punk #031 Asko falta da?",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/xarmatiropunk-2021-11-09.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/Asko-falta-da-1024x444.jpg",
         "author": "Xarma tiro punk",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/Asko-falta-da-1024x444.jpg",
         "slug": "Xarma_tiro_punk_031_Asko_falta_da",
         "date": "Wed, 10 Nov 2021 10:08:59 +0000",
         "duration": "1:00:16"
     },
     {
-        "id": "http://www.txapairratia.org/?p=27630",
+        "id": "27630",
         "title": "KOLAX Mukuru jaia, gutunak, Altsasu",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/kolax-20211110.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/erbesteko-gutunak-victor-hugori-txalaparta-eus-745x1024.jpg",
         "author": "Kolax",
-        "thumb": "http://www.txapairratia.org/wp-content/uploads/2021/11/erbesteko-gutunak-victor-hugori-txalaparta-eus-745x1024.jpg",
         "slug": "KOLAX_Mukuru_jaia_gutunak_Altsasu",
         "date": "Tue, 09 Nov 2021 22:24:02 +0000",
         "duration": "1:09:02"
     },
     {
-        "id": "http://www.txapairratia.org/?p=27692",
+        "id": "27692",
         "title": "NOLA ALDATZEN DIREN GAUZAK #215 Kriptotxanponak",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/nolaaldatzen-2021-11-17.mp3",
         "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/txanpon-1024x682.jpeg",
@@ -100,7 +70,7 @@
         "duration": "1:01:15"
     },
     {
-        "id": "http://www.txapairratia.org/?p=27678",
+        "id": "27678",
         "title": "Xarma Tiro Punk #032 Lo que importa es la pasión que pongas en la jugada.",
         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/xarmatiropunk-2021-11-16.mp3",
         "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/WhatsApp-Image-2021-11-15-at-23.28.00-1024x739.jpeg",
@@ -108,5 +78,15 @@
         "slug": "Xarma_Tiro_Punk_032_Lo_que_importa_es_la_pasión_que_pongas_en_la_jugada",
         "date": "Wed, 17 Nov 2021 13:50:23 +0000",
         "duration": "1:00:01"
+    },
+    {
+        "id": "27673",
+        "title": "KOLAX hizkuntza, ez donk amaitu, guifinet, magia",
+        "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/kolax20211116.mp3",
+        "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/0026364120_10-1024x724.jpg",
+        "author": "Kolax",
+        "slug": "KOLAX_hizkuntza_ez_donk_amaitu_guifinet_magia",
+        "date": "Tue, 16 Nov 2021 22:17:19 +0000",
+        "duration": "1:03:59"
     }
 ]
