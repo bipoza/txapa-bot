@@ -1,5 +1,6 @@
 import telegram
 from constants import TELEGRAM_BOT_API_KEY, TELEGRAM_CHAT_ID
+from audio_compressor import compressAudioUrl
 
 def notify_telegram(message):
 
@@ -27,4 +28,5 @@ def notify_telegram(message):
 
 
 if __name__ == '__main__':
-    notify_telegram('Kaixo mundua')
+    compressAudioUrl("./audio/xarmatiropunk-2021-11-16.mp3", "./audio/compressed/xarmatiropunk-2021-11-16.mp3")
+    # notify_telegram('Kaixo mundua')
