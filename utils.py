@@ -22,3 +22,41 @@ def download_from_url(url, path):
     import urllib.request
     urllib.request.urlretrieve(url, path)
     return path
+
+def get_file_extension(filename):
+    import os
+    return os.path.splitext(filename)[1]
+
+def save_item_to_file(item):
+    from get_rss import get_rss_items_in_json_from_file, save_rss_items_in_json_to_file
+    json_db = get_rss_items_in_json_from_file()
+    json_db.append(item)
+    save_rss_items_in_json_to_file(json_db)
+
+# def remove_file(path):
+#     import os
+#     if os.path.exists(path):
+#         os.remove(path)
+#     else:
+#         print("The file does not exist")
+
+
+def create_folder(path):
+    import os
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+def remove_folder(path):
+    import os, shutil
+    if os.path.exists(path):
+      for filename in os.listdir(path):
+        file_path = os.path.join(path, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
+    else:
+        print("The folder does not exist")
