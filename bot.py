@@ -6,20 +6,7 @@ from get_rss import get_news_items
 from utils import create_folder, download_from_url, get_file_extension, save_item_to_file, remove_folder, create_folder
 
 
-
-
-
 def notify_telegram(title, audio, filename, thumb, caption, performer, duration):
-
-    # podcast_data = {
-    #     "audio":"./audio/xarmatiropunk-2021-11-16_compressed.mp3",
-    #     "filename":"xarma-tiro-punk-031-asko-falta-da",
-    #     "thumb":"./audio/thumb.jpeg",
-    #     "caption":"Xarma tiro punk #031 Asko falta da?",
-    #     "performer":"xarma tiro punk",
-    # }
-
-
     bot = telegram.Bot(token=TELEGRAM_BOT_API_KEY)
     # bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
     bot.send_audio(chat_id=TELEGRAM_CHAT_ID, 
@@ -31,10 +18,9 @@ def notify_telegram(title, audio, filename, thumb, caption, performer, duration)
         performer=performer,
         duration=duration)
     print("Telegram notification sent")
-    # import pdb; pdb.set_trace()
 
 
-if __name__ == '__main__':
+def new_podcast_sender():
     # RSS eta Datu basearen arteko elementu berriak ekarri
     news_items = get_news_items()
     
@@ -71,5 +57,6 @@ if __name__ == '__main__':
                 remove_folder(folder_path)
     else:
         print("Ez dago irratsaio berririk")
-            # compress_audio_url("./audio/xarmatiropunk-2021-11-16.mp3", "./audio/compressed/xarmatiropunk-2021-11-16.mp3")
-    # notify_telegram('Kaixo mundua')
+
+if __name__ == '__main__':
+    new_podcast_sender()

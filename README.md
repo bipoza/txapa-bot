@@ -56,3 +56,4 @@ Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
 * Pillow
 * feedparser
 * beautifulsoup4
+* schedule
