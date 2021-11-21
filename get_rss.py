@@ -24,11 +24,17 @@ def get_thumb_url(item):
         return img['src']
     return None
 
-# def get_caption(item):
-#     subtitle_detail = item.get("subtitle_detail", None)
-#     if subtitle_detail:
-#         return subtitle_detail['value']
-#     return None
+def get_duration_in_seconds(item):
+    duration = item.get("itunes_duration", None)
+    if duration:
+        duration_parts = duration.split(":")
+        if len(duration_parts) == 3:
+            return int(duration_parts[0]) * 3600 + int(duration_parts[1]) * 60 + int(duration_parts[2])
+        elif len(duration_parts) == 2:
+            return int(duration_parts[0]) * 60 + int(duration_parts[1])
+        else:
+            return int(duration_parts[0])
+    return None
 
 def get_caption(item):
     soup = BeautifulSoup(item.summary, features="html.parser")
@@ -51,7 +57,7 @@ def get_rss_items_in_json():
             "author": item.tags[0]['term'],
             "slug":slugify(item.title),
             "date": item.get("published", None),
-            "duration": item.get("itunes_duration", None),
+            "duration": get_duration_in_seconds(item),
             "caption": get_caption(item),
         }
         # import pdb; pdb.set_trace()
