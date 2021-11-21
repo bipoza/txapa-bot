@@ -45,8 +45,10 @@ def get_caption(item):
 
 def get_rss_items_in_json():
     feed = feedparser.parse(TXAPA_IRRATIA_RSS_URL)
-    rss_items = feed.entries
-
+    rss_items = feed.entries 
+    # [: : -1] funtzioak zerrendaren ordena aldatzen du. Zaharrak lehenengo eta ondoren berriak. .reverse() modukoa da.
+    rss_items = rss_items[: : -1]
+    # import pdb; pdb.set_trace()
     json_items = []
     for item in rss_items:
         podcast_data = {
