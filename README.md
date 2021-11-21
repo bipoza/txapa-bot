@@ -52,3 +52,4 @@ Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
 * python-telegram-bot
 * pydub
 * feedparser
+* beautifulsoup4
