@@ -4,6 +4,12 @@ from constants import TXAPA_IRRATIA_RSS_URL
 from utils import slugify
 import json
 
+def get_id(item):
+    id= item.get("id", None)
+    if id:
+        return id.split("?p=",1)[1] 
+    return None
+
 def get_mp3_url(item):
     for link in item.links:
         if link.rel == "enclosure":
@@ -25,7 +31,7 @@ def get_rss_items_in_json():
     json_items = []
     for item in rss_items:
         podcast_data = {
-            "id": item.get("id", None),
+            "id": get_id(item),
             "title": item.get("title", None),
             "audio_url": get_mp3_url(item),
             "thumb_url":get_thumb_url(item),
@@ -56,10 +62,8 @@ def get_news_items():
     local_rss_items = get_rss_items_in_json_from_file()
     # Bi zerrendak konparatzen ditugu, bakarrik berriak direnak hatuko ditugu
     compared_new_items = [item for item in server_rss_items if item not in local_rss_items]
-
-    print(compared_new_items)
     return compared_new_items
     # save_rss_items_in_json_to_file(rss_items)
 
-if __name__ == "__main__":
-    get_news_items()
+# if __name__ == "__main__":
+#     get_news_items()
