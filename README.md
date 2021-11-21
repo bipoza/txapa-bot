@@ -28,7 +28,7 @@ Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
    Teknologia libreak erabiltzeak onura zoragarriak ditu.
    Honi esker, TxapaBot-ek behar duen informazio guztia [txapairratia.org-eko](http://txapairratia.org) RSStik lortzen du. http://www.txapairratia.org/rss/
 
-2. Audioa konprimitu:
+2. Audioa + thumb irudia konprimitu:
    
    Telegrameko botek aukera asko izan arren, aukera batzuk mugatuta daude.
    Adibidez, bot batek **50 MB-tik beherako fitxategiak** bakarrik bidal ditzake. https://core.telegram.org/bots/faq#how-do-i-upload-a-large-file
@@ -36,6 +36,8 @@ Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
    Beraz, arazo honi aurre egiteko, audio fitxategiak deskargatu eta konprimitu behar dira, 50 MB baino gutxiagoko fitxategiak sortuz.
 
    Prozesu hau egiteko, **pydub** izeneko liburutegia erabiltzen dugu. Tresna honek **ffmpeg**-eko interfaze bat eskaintzen digu (ffmpeg sisteman instalatu behar da ere). Kalitate tabla: https://trac.ffmpeg.org/wiki/Encode/MP3
+
+   Irudiari dagokionez, 200kb-eko muga dauka. Kalitatea txikitzeko Pillow liburutegia erabili da.
 
    Bestalde, honi alde ona ikus diezaiokegu. Irratsaio bat mugikorrera deskargatzean, gutxiago okupatuko digu ;)
 
@@ -51,5 +53,6 @@ Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
 ## Erabilitako python liburutegiak
 * python-telegram-bot
 * pydub
+* Pillow
 * feedparser
 * beautifulsoup4

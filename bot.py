@@ -1,6 +1,7 @@
 import telegram
 from constants import TELEGRAM_BOT_API_KEY, TELEGRAM_CHAT_ID
 from audio_compressor import compress_audio_url
+from image_compressor import compress_image
 from get_rss import get_news_items
 from utils import create_folder, download_from_url, get_file_extension, save_item_to_file, remove_folder, create_folder
 
@@ -42,6 +43,8 @@ if __name__ == '__main__':
             create_folder(folder_path)
 
             thumb_file_url = download_from_url(item['thumb_url'], '{}/{}_thumb{}'.format(folder_path, item['slug'], get_file_extension(item['thumb_url'])))
+            compress_image(thumb_file_url, 30)
+            
             print("Irudia deskargatua: " + thumb_file_url+"\n")
 
             audio_file_url = download_from_url(item['audio_url'], '{}/{}{}'.format(folder_path, item['slug'], get_file_extension(item['audio_url'])))
