@@ -3,7 +3,7 @@ prod_constants.py
 venv/
 audio/
 data.json
-
+db/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

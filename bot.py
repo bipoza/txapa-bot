@@ -3,7 +3,7 @@ from constants import TELEGRAM_BOT_API_KEY, TELEGRAM_CHAT_ID
 from audio_compressor import compress_audio_url
 from image_compressor import compress_image
 from get_rss import get_news_items
-from utils import create_folder, download_from_url, get_file_extension, save_item_to_file, remove_folder, create_folder
+from utils import create_folder, download_from_url, get_file_extension, add_irratsaioa_to_db, remove_folder, create_folder
 
 
 def notify_telegram(title, audio, filename, thumb, caption, performer, duration):
@@ -52,11 +52,11 @@ def new_podcast_sender():
                     performer=item['author'],
                     duration=item['duration']
                 )
-                # import pdb; pdb.set_trace()
-                save_item_to_file(item)
+                
+                add_irratsaioa_to_db(item)
                 remove_folder(folder_path)
     else:
         print("Ez dago irratsaio berririk")
 
-if __name__ == '__main__':
-    new_podcast_sender()
+# if __name__ == '__main__':
+#     new_podcast_sender()

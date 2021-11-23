@@ -1,11 +1,13 @@
+from constants import BIDALITAKO_IRRATSAIOEN_DB, DEFAULT_RSS_LENGTH
+
+
 # Fitxategien izenak berrizendatzeko erabiltzen da.
 # Irratsaioaren izenburua pasatuta espazioak eta karaktere bereziak garbituko ditu.
-non_url_safe = ['"', '#', '$', '%', '&', '+',
-                    ',', '/', ':', ';', '=', '?',
-                    '@', '[', '\\', ']', '^', '`',
-                    '{', '|', '}', '~', "'", "."]
-
 def slugify(text):
+    non_url_safe = ['"', '#', '$', '%', '&', '+',
+                        ',', '/', ':', ';', '=', '?',
+                        '@', '[', '\\', ']', '^', '`',
+                        '{', '|', '}', '~', "'", "."]
     """
     Turn the text content of a header into a slug for use in an ID
     """
@@ -27,11 +29,7 @@ def get_file_extension(filename):
     import os
     return os.path.splitext(filename)[1]
 
-def save_item_to_file(item):
-    from get_rss import get_rss_items_in_json_from_file, save_rss_items_in_json_to_file
-    json_db = get_rss_items_in_json_from_file()
-    json_db.append(item)
-    save_rss_items_in_json_to_file(json_db)
+
 
 # def remove_file(path):
 #     import os
@@ -52,3 +50,61 @@ def remove_folder(path):
         shutil.rmtree(path)
     else:
         print("The folder does not exist")
+
+# JSON objektu oso bat fitxategian gordetzeko erabiltzen da. Adib: [{}, {}, {}]
+def save_json_to_file(json_db, path):
+    import json
+    with open(path, 'w') as f:
+        json.dump(json_db, f)
+
+# JSON objektu bat fitxategitik irakurtzeko erabiltzen da.
+def get_json_from_file(path):
+    import json
+    with open(path, 'r') as f:
+        return json.load(f)
+
+
+def get_mouth_number_from_string(string):
+    mouth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    for i, m in enumerate(mouth):
+        if m in string:
+            return i + 1
+    return None
+
+
+
+
+
+
+
+
+
+
+
+def add_irratsaioa_to_db(item):
+    json_db = get_json_from_file(BIDALITAKO_IRRATSAIOEN_DB)
+    json_db.append(item)
+    # save_json_to_file(json_db, BIDALITAKO_IRRATSAIOEN_DB)
+
+    default_rss_length = get_json_from_file(DEFAULT_RSS_LENGTH).get("length", None)
+
+    # get recent default_rss_length items and remove oldest
+    json_db = json_db[-default_rss_length:]
+    save_json_to_file(json_db, BIDALITAKO_IRRATSAIOEN_DB)
+
+
+# item = {
+#         "id": "27630",
+#         "title": "KOLAX Mukuru jaia, gutunak, Altsasu",
+#         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/kolax-20211110.mp3",
+#         "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/erbesteko-gutunak-victor-hugori-txalaparta-eus-745x1024.jpg",
+#         "author": "Kolax",
+#         "slug": "KOLAX_Mukuru_jaia_gutunak_Altsasu",
+#         "date": "Tue, 09 Nov 2021 22:24:02 +0000",
+#         "duration": 4142,
+#         "caption": "Gaurko saioan Mukuru festa aurkeztu dozku Alainek, Ainhoak Martxanterek eta Angiolillo liburutegiak antolatutako liburu aurkezpenan […]"
+#     }
+# if __name__ == "__main__":
+    # add_irratsaioa_to_db(item)
+    # pass
+# add_irratsaioa_to_db(item)
