@@ -4,7 +4,7 @@ TXAPA_IRRATIA_RSS_URL = "http://www.txapairratia.org/rss/"
 
 
 # Zenbatero exekutatu beharko da rss-a eskatzeko ataza?
-RSS_CHECKER_TASK_IN_MINUTES = 1
+RSS_CHECKER_TASK_IN_MINUTES = 10
 
 # Katxeak
 BIDALITAKO_IRRATSAIOEN_DB = "./db/irratsaio_db.json"
