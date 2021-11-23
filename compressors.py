@@ -2,7 +2,8 @@
 from PIL import Image
 def compress_image(image_path, quality=50):
     picture = Image.open(image_path)
-    picture.save(image_path, optimize=True,quality=quality)
+    picture = picture.resize((300, 300), Image.ANTIALIAS)
+    picture.save(image_path, optimize=True, quality=quality)
 
 
 # Lortu beharreko tamaina maximoa: 50mb
