@@ -1,26 +1,10 @@
-import telegram
-from constants import TELEGRAM_BOT_API_KEY, TELEGRAM_CHAT_ID
-from audio_compressor import compress_audio_url
-from image_compressor import compress_image
+from compressors import compress_audio_url, compress_image
 from get_rss import get_news_items
-from utils import create_folder, download_from_url, get_file_extension, add_irratsaioa_to_db, remove_folder, create_folder
+from utils import create_folder, download_from_url, get_file_extension, add_irratsaioa_to_db, remove_folder
+from telegram_sender import send_audio_to_chat
 
 
-def notify_telegram(title, audio, filename, thumb, caption, performer, duration):
-    bot = telegram.Bot(token=TELEGRAM_BOT_API_KEY)
-    # bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
-    bot.send_audio(chat_id=TELEGRAM_CHAT_ID, 
-        audio=open(audio, 'rb'), 
-        thumb=open(thumb, 'rb'),
-        title=title,
-        caption=caption,
-        filename=filename,
-        performer=performer,
-        duration=duration)
-    print("Telegram notification sent")
-
-
-def new_podcast_sender():
+def new_podcast_checker_task():
     # RSS eta Datu basearen arteko elementu berriak ekarri
     news_items = get_news_items()
     
@@ -43,7 +27,7 @@ def new_podcast_sender():
                 compressed_file_url = compress_audio_url(audio_file_url, '{}/{}_compressed{}'.format(folder_path, item['slug'], get_file_extension(item['audio_url'])))
                 print("Audioa konprimatu da: " + compressed_file_url)
             
-                notify_telegram(
+                send_audio_to_chat(
                     audio=compressed_file_url,
                     filename=item['slug'],
                     thumb=thumb_file_url,
@@ -57,6 +41,3 @@ def new_podcast_sender():
                 remove_folder(folder_path)
     else:
         print("Ez dago irratsaio berririk")
-
-# if __name__ == '__main__':
-#     new_podcast_sender()

@@ -1,17 +1,17 @@
 import schedule
 import time
 from datetime import datetime
-from bot import new_podcast_sender
+from constants import RSS_CHECKER_TASK_IN_MINUTES
+from tasks import new_podcast_checker_task
 
 def main():
 
     def job():
-        # print("I'm working...")
         date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         print(date)
 
     schedule.every().minute.do(job)
-    schedule.every(10).minutes.do(new_podcast_sender)
+    schedule.every(RSS_CHECKER_TASK_IN_MINUTES).minutes.do(new_podcast_checker_task)
 
     # schedule.every().hour.do(job)
     # schedule.every().day.at("10:30").do(job)

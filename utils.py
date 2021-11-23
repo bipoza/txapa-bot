@@ -73,14 +73,6 @@ def get_mouth_number_from_string(string):
 
 
 
-
-
-
-
-
-
-
-
 def add_irratsaioa_to_db(item):
     json_db = get_json_from_file(BIDALITAKO_IRRATSAIOEN_DB)
     json_db.append(item)
@@ -91,20 +83,3 @@ def add_irratsaioa_to_db(item):
     # get recent default_rss_length items and remove oldest
     json_db = json_db[-default_rss_length:]
     save_json_to_file(json_db, BIDALITAKO_IRRATSAIOEN_DB)
-
-
-# item = {
-#         "id": "27630",
-#         "title": "KOLAX Mukuru jaia, gutunak, Altsasu",
-#         "audio_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/kolax-20211110.mp3",
-#         "thumb_url": "http://www.txapairratia.org/wp-content/uploads/2021/11/erbesteko-gutunak-victor-hugori-txalaparta-eus-745x1024.jpg",
-#         "author": "Kolax",
-#         "slug": "KOLAX_Mukuru_jaia_gutunak_Altsasu",
-#         "date": "Tue, 09 Nov 2021 22:24:02 +0000",
-#         "duration": 4142,
-#         "caption": "Gaurko saioan Mukuru festa aurkeztu dozku Alainek, Ainhoak Martxanterek eta Angiolillo liburutegiak antolatutako liburu aurkezpenan […]"
-#     }
-# if __name__ == "__main__":
-    # add_irratsaioa_to_db(item)
-    # pass
-# add_irratsaioa_to_db(item)
