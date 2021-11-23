@@ -54,6 +54,12 @@ def remove_folder(path):
 # JSON objektu oso bat fitxategian gordetzeko erabiltzen da. Adib: [{}, {}, {}]
 def save_json_to_file(json_db, path):
     import json
+    import os
+
+    # Create folder if it doesn't exist
+    path_folder = os.path.dirname(path)
+    create_folder(path_folder)
+
     with open(path, 'w') as f:
         json.dump(json_db, f)
 
