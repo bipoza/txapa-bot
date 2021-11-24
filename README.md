@@ -3,16 +3,47 @@
 
 ## Instalazioa
 ### 1. Virtual environment bat sortu 
-##### *virtualenv instalatuta baldin badaukazu ez egin pauso hau
-1. Instalatu virtualenv
-   ```$ pip3 install virtualenv```
+
+1. Virtualenv instalatu (instalatuta baldin baduzu, ez egin pauso hau)
+   
+   ```bash
+      $ pip3 install virtualenv
+   ```
    
 2. Sortu zure ingurune birtuala
-   ```$ virtualenv -p venv .```
+   
+   ```bash
+      $ virtualenv -p venv .
+   ```
 
-### 2. Dependentziak instalatu
+### 2. Virtual environment-a aktibatu
+
+```bash
+   $ source venv/bin/activate
+``` 
+### 3. Dependentziak instalatu
+
+```bash
+   $ pip install -r requirements.txt
 ```
-$ pip install -r requirements.txt
+
+### 4. Fitxategiak konprimatzeko sisteman ffmpeg instalatuko dugu
+  *Hau garrantzitsua da Telegrameko botek ezin dutelako 50MB baino gehiagoko fitxategiak bidali. Horretarako erdira jaisten duen konpresio tasa bat erabiliko dugu.*
+  
+  *Txapa irratiko irratsaio bakoitzaren batazbestekoa, 60MBkoa da. Honekin 34MBera jaisteko aukera dugu.*
+
+```bash
+   $ sudo apt install ffmpeg
+```
+**Edo** zuzenean dena onartu eta komando bakarrean instalatzeko:
+```bash
+  $ sudo apt install -y ffmpeg
+```
+
+### 5. Zerbitzaria martxan jarri
+
+```bash
+ $ python start.py
 ```
 
 ## Konfigurazioa
