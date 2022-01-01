@@ -78,7 +78,8 @@ def get_news_items():
     local_rss_items = get_json_from_file(BIDALITAKO_IRRATSAIOEN_DB)
     # Bi zerrendak konparatzen ditugu, bakarrik berriak direnak hatuko ditugu
     compared_new_items = [item for item in server_rss_items if item not in local_rss_items]
-    return compared_new_items
+    clean_items_without_audio_url = [item for item in compared_new_items if item.get("audio_url", None) is not None]
+    return clean_items_without_audio_url
 
 if __name__ == "__main__":
     get_news_items()
