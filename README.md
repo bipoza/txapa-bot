@@ -7,43 +7,45 @@
 1. Virtualenv instalatu (instalatuta baldin baduzu, ez egin pauso hau)
    
    ```bash
-      $ pip3 install virtualenv
+   pip3 install virtualenv
    ```
    
 2. Sortu zure ingurune birtuala
    
    ```bash
-      $ virtualenv -p venv .
+   virtualenv -p venv .
    ```
 
 ### 2. Virtual environment-a aktibatu
 
 ```bash
-   $ source venv/bin/activate
+source venv/bin/activate
 ``` 
 ### 3. Dependentziak instalatu
 
 ```bash
-   $ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-### 4. Fitxategiak konprimatzeko sisteman ffmpeg instalatuko dugu
-  *Hau garrantzitsua da Telegrameko botek ezin dutelako 50MB baino gehiagoko fitxategiak bidali. Horretarako erdira jaisten duen konpresio tasa bat erabiliko dugu.*
+### 4. Fitxategiak konprimatzeko, sisteman ffmpeg instalatu beharko dugu
+  *Hau garrantzitsua da. Telegrameko botek ezin dute 50MB baino gehiagoko fitxategiak bidali. Horretarako erdira jaisten duen konpresio tasa bat erabiliko dugu.*
   
-  *Txapa irratiko irratsaio bakoitzaren batazbestekoa, 60MBkoa da. Honekin 34MBera jaisteko aukera dugu.*
+  Txapa irratiko irratsaio bakoitzaren batezbestekoa, 60MBkoa da. Honekin 34MBera jaisteko aukera izango dugu.
 
 ```bash
-   $ sudo apt install ffmpeg
-```
-**Edo** zuzenean dena onartu eta komando bakarrean instalatzeko:
-```bash
-  $ sudo apt install -y ffmpeg
+sudo apt install ffmpeg
 ```
 
-### 5. Zerbitzaria martxan jarri
+Edo zuzenean dena onartu eta komando bakarrean instalatzeko:
 
 ```bash
- $ python start.py
+sudo apt install -y ffmpeg
+```
+
+### 5. Zerbitzaria martxan jartzeko
+
+```bash
+python start.py
 ```
 
 ## Konfigurazioa
@@ -54,7 +56,7 @@
 
 ## Funtzionamendua
 Bot hau hiru funtzionalitate nagusitan banatzen da:
-### 1. Informazioa lortu:
+### 1. RSS jariotik informazioa lortu:
    
    Teknologia libreak erabiltzeak onura zoragarriak ditu.
    Honi esker, TxapaBot-ak [txapairratia.org-eko](http://txapairratia.org) RSStik informazio guztia lor dezake.
@@ -68,7 +70,7 @@ Bot hau hiru funtzionalitate nagusitan banatzen da:
 
    Beraz, arazo honi aurre egiteko, audio fitxategiak deskargatu eta konprimitu behar dira, 50 MB baino gutxiagoko fitxategiak sortuz.
 
-   Prozesu hau egiteko, **pydub** izeneko liburutegia erabiltzen dugu. Tresna honek **ffmpeg**-eko interfaze bat eskaintzen digu (ffmpeg sisteman instalatu behar da ere). Kalitate tabla: https://trac.ffmpeg.org/wiki/Encode/MP3
+   Prozesu hau egiteko, **pydub** izeneko liburutegia erabiltzen dugu. Tresna honek **ffmpeg**-eko interfaze bat eskaintzen digu (ffmpeg sisteman instalatu behar da ere). Kalitate taula: https://trac.ffmpeg.org/wiki/Encode/MP3
 
    Irudiari dagokionez, 200kb-eko muga dauka. Kalitatea txikitzeko **Pillow** liburutegia erabili da.
 
@@ -76,11 +78,9 @@ Bot hau hiru funtzionalitate nagusitan banatzen da:
 
 ### 3. Audioa bidali:
    
-   Bukatzeko, fitxategia txat batera bidaltzen da, **python-telegram-bot** liburutegia erabiliz.
+   Bukatzeko, **python-telegram-bot** liburutegia erabiliz mezua txat batera bidaltzen da.
 
    Gure kasuan, edonork parte har dezan, telegrameko @txapagram kanal publikora bidaltzen dugu.
-
-
 
 
 ## Erabilitako python liburutegiak
