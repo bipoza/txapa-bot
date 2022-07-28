@@ -53,7 +53,7 @@
 
 
 ## Baina... Nola funtzionatzen du honek?
-Bueno ba, bot honek hiru funtzionalitate nagusitan banatzen da:
+Bueno ba, bot hau hiru funtzionalitate nagusitan banatzen da:
 1. Informazioa lortu:
    
    Teknologia libreak erabiltzeak onura zoragarriak ditu.
