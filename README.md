@@ -57,7 +57,9 @@ Bueno ba, bot hau hiru funtzionalitate nagusitan banatzen da:
 1. Informazioa lortu:
    
    Teknologia libreak erabiltzeak onura zoragarriak ditu.
-   Honi esker, TxapaBot-ek behar duen informazio guztia [txapairratia.org-eko](http://txapairratia.org) RSStik lortzen du. http://www.txapairratia.org/rss/
+   Honi esker, TxapaBot-ak [txapairratia.org-eko](http://txapairratia.org) RSStik informazio guztia lor dezake.
+   http://www.txapairratia.org/rss/
+  
 
 2. Audioa + thumb irudia konprimitu:
    
