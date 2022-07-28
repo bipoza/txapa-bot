@@ -4,13 +4,13 @@
 ## Instalazioa
 ### 1. Virtual environment bat sortu 
 
-1. Virtualenv instalatu (instalatuta baldin baduzu, ez egin pauso hau)
+1. Virtualenv instalatu (instalatuta baduzu, ez egin pauso hau)
    
    ```bash
    pip3 install virtualenv
    ```
    
-2. Sortu zure ingurune birtuala
+2. Ingurune birtuala sortu
    
    ```bash
    virtualenv -p venv .
