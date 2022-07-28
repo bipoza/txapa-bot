@@ -52,16 +52,16 @@
 2. TELEGRAM_CHAT_ID: CHAT_ID-a lortzeko, jarraitu gida hau: https://github.com/GabrielRF/telegram-id#web-channel-id
 
 
-## Baina... Nola funtzionatzen du honek?
-Bueno ba, bot hau hiru funtzionalitate nagusitan banatzen da:
-1. Informazioa lortu:
+## Funtzionamendua
+Bot hau hiru funtzionalitate nagusitan banatzen da:
+### 1. Informazioa lortu:
    
    Teknologia libreak erabiltzeak onura zoragarriak ditu.
    Honi esker, TxapaBot-ak [txapairratia.org-eko](http://txapairratia.org) RSStik informazio guztia lor dezake.
    http://www.txapairratia.org/rss/
   
 
-2. Audioa + thumb irudia konprimitu:
+### 2. Audioa + thumb irudia konprimitu:
    
    Telegrameko botek aukera asko izan arren, aukera batzuk mugatuta daude.
    Adibidez, bot batek **50 MB-tik beherako fitxategiak** bakarrik bidal ditzake. https://core.telegram.org/bots/faq#how-do-i-upload-a-large-file
@@ -70,11 +70,11 @@ Bueno ba, bot hau hiru funtzionalitate nagusitan banatzen da:
 
    Prozesu hau egiteko, **pydub** izeneko liburutegia erabiltzen dugu. Tresna honek **ffmpeg**-eko interfaze bat eskaintzen digu (ffmpeg sisteman instalatu behar da ere). Kalitate tabla: https://trac.ffmpeg.org/wiki/Encode/MP3
 
-   Irudiari dagokionez, 200kb-eko muga dauka. Kalitatea txikitzeko Pillow liburutegia erabili da.
+   Irudiari dagokionez, 200kb-eko muga dauka. Kalitatea txikitzeko **Pillow** liburutegia erabili da.
 
-   Bestalde, honi alde ona ikus diezaiokegu. Irratsaio bat mugikorrera deskargatzean, gutxiago okupatuko digu ;)
+   Bestalde, honi alde ona ikus diezaiokegu. Irratsaio bat mugikorrera deskargatzean, pisu gutxiago izango du ;)
 
-3. Audioa bidali:
+### 3. Audioa bidali:
    
    Bukatzeko, fitxategia txat batera bidaltzen da, **python-telegram-bot** liburutegia erabiliz.
 
@@ -90,3 +90,6 @@ Bueno ba, bot hau hiru funtzionalitate nagusitan banatzen da:
 * feedparser
 * beautifulsoup4
 * schedule
+
+## Linux software gehigarriak
+* ffmpeg
